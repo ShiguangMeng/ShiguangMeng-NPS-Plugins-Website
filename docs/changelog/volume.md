@@ -3,7 +3,7 @@ title: 音量控制 更新日志
 description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.1。
 ---
 
-共 **3 个版本、15 项改动**。当前最新版本 **v1.1.1**（2026-10-07）。
+共 **3 个版本、14 项改动**。当前最新版本 **v1.1.1**（2026-10-07）。
 
 ## v1.1.1 <span class="rel-date">2026-10-07</span> <span class="rel-badge">最新</span>
 
