@@ -1,0 +1,557 @@
+/* ============================================================================
+   拾光梦 · NPS 插件 —— VitePress 主题定制
+   视觉基线：vuejs.org 的 VitePress 默认主题（保留其信息架构与组件）
+   动效叠加：rayburst.pages.dev 的滚动进场、悬浮抬升、渐变光晕、进度生长
+   ========================================================================= */
+
+/* ───────────────────────────── 设计令牌 ───────────────────────────── */
+
+:root {
+  /* 品牌色：沿用 VitePress 的 Vue 绿系 */
+  --vp-c-brand-1: #2c8c60;
+  --vp-c-brand-2: #33a06f;
+  --vp-c-brand-3: #42b883;
+  --vp-c-brand-soft: rgba(66, 184, 131, 0.14);
+
+  --vp-c-tip-1: #2c8c60;
+  --vp-c-tip-soft: rgba(66, 184, 131, 0.12);
+
+  --vp-c-bg: #fff;
+  --vp-c-bg-alt: #f6f6f7;
+  --vp-c-bg-soft: #f6f6f7;
+  --vp-c-bg-elv: #fff;
+
+  --vp-c-divider: #e2e2e3;
+  --vp-c-border: #d4d4d6;
+  --vp-c-gutter: #e2e2e3;
+
+  --vp-c-text-1: #32363f;
+  --vp-c-text-2: #5c6270;
+  --vp-c-text-3: #8b909d;
+
+  /* 版面（对齐 vuejs.org 的默认主题尺寸） */
+  --vp-nav-height: 64px;
+  --vp-sidebar-width: 272px;
+  --vp-layout-max-width: 1440px;
+
+  /* 字体 */
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei',
+    'Source Han Sans SC', 'Noto Sans CJK SC', sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas,
+    'Liberation Mono', Menlo, monospace;
+
+  /* 缓动 */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.42, 0.64, 1);
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 4px 14px rgba(16, 24, 40, 0.07);
+  --shadow-lg: 0 14px 40px rgba(16, 24, 40, 0.1);
+  --shadow-brand: 0 10px 30px rgba(66, 184, 131, 0.22);
+}
+
+.dark {
+  --vp-c-brand-1: #4cc38a;
+  --vp-c-brand-2: #42b883;
+  --vp-c-brand-3: #33a06f;
+  --vp-c-brand-soft: rgba(76, 195, 138, 0.16);
+
+  --vp-c-tip-1: #4cc38a;
+  --vp-c-tip-soft: rgba(76, 195, 138, 0.14);
+
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-soft: #202127;
+  --vp-c-bg-elv: #242529;
+
+  --vp-c-divider: #2e2e32;
+  --vp-c-border: #3a3a40;
+  --vp-c-gutter: #000;
+
+  --vp-c-text-1: rgba(255, 255, 255, 0.9);
+  --vp-c-text-2: rgba(235, 235, 245, 0.62);
+  --vp-c-text-3: rgba(235, 235, 245, 0.4);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 14px 40px rgba(0, 0, 0, 0.45);
+  --shadow-brand: 0 10px 30px rgba(76, 195, 138, 0.16);
+}
+
+/* 中文字体下略微放宽行高，长文更耐读 */
+.vp-doc {
+  line-height: 1.74;
+  font-size: 15.5px;
+}
+
+.vp-doc p,
+.vp-doc li {
+  letter-spacing: 0.01em;
+}
+
+/* ───────────────────────────── 背景光晕 ───────────────────────────── */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: -25% -12%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(620px circle at 10% 2%, rgba(66, 184, 131, 0.2), transparent 62%),
+    radial-gradient(540px circle at 92% 6%, rgba(59, 130, 246, 0.14), transparent 62%),
+    radial-gradient(520px circle at 46% 108%, rgba(168, 85, 247, 0.1), transparent 62%);
+  animation: auroraDrift 30s ease-in-out infinite alternate;
+}
+
+.dark body::before {
+  background:
+    radial-gradient(620px circle at 10% 2%, rgba(76, 195, 138, 0.14), transparent 62%),
+    radial-gradient(540px circle at 92% 6%, rgba(59, 130, 246, 0.1), transparent 62%),
+    radial-gradient(520px circle at 46% 108%, rgba(168, 85, 247, 0.08), transparent 62%);
+}
+
+@keyframes auroraDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-4%, 3%, 0) scale(1.08);
+  }
+}
+
+/* 让内容层压在光晕之上 */
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+
+/* ───────────────────────────── 顶部导航栏 ───────────────────────────── */
+
+.VPNav {
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.VPNavBar:not(.has-sidebar) {
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+}
+
+.VPNavBar .title .text,
+.VPNavBarTitle .title {
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.VPNavBarTitle .logo {
+  transition: transform 0.5s var(--ease-spring);
+}
+
+.VPNavBarTitle:hover .logo {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.VPNavBarMenuLink {
+  transition: color 0.2s var(--ease-out);
+}
+
+.VPNavBarMenuLink::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--vp-c-brand-1);
+  transform: translateX(-50%);
+  transition: width 0.28s var(--ease-out);
+}
+
+.VPNavBarMenuLink:hover::after,
+.VPNavBarMenuLink.active::after {
+  width: 18px;
+}
+
+/* 导航栏图标按钮的悬浮反馈 */
+.VPSwitchAppearance,
+.VPSocialLink {
+  transition: transform 0.28s var(--ease-spring), color 0.2s var(--ease-out);
+}
+
+.VPSwitchAppearance:hover,
+.VPSocialLink:hover {
+  transform: scale(1.12);
+}
+
+/* ───────────────────────────── 侧边栏 ───────────────────────────── */
+
+.VPSidebarItem.level-0 > .item > .text {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--vp-c-text-2);
+}
+
+.VPSidebarItem .link {
+  transition: color 0.2s var(--ease-out), transform 0.24s var(--ease-out),
+    background-color 0.2s var(--ease-out);
+}
+
+.VPSidebarItem .link:hover .text {
+  transform: translateX(2px);
+}
+
+/* 当前页：左侧品牌色竖条 */
+.VPSidebarItem.is-active > .item .link .text {
+  font-weight: 650;
+}
+
+.VPSidebarItem.is-active > .item::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--vp-c-brand-1);
+}
+
+.VPSidebarItem.level-1 > .item {
+  position: relative;
+}
+
+/* 侧边栏指示线渐显 */
+.VPSidebarItem .indicator {
+  transition: background-color 0.3s var(--ease-out);
+}
+
+/* ───────────────────────────── 右侧目录 ───────────────────────────── */
+
+.VPDocAsideOutline .outline-link {
+  transition: color 0.2s var(--ease-out), transform 0.24s var(--ease-out);
+}
+
+.VPDocAsideOutline .outline-link:hover {
+  color: var(--vp-c-brand-1);
+  transform: translateX(2px);
+}
+
+.VPDocAsideOutline .outline-link.active {
+  font-weight: 650;
+}
+
+/* ───────────────────────────── 正文排版 ───────────────────────────── */
+
+.vp-doc h1 {
+  font-size: 32px;
+  letter-spacing: -0.022em;
+  font-weight: 750;
+}
+
+.vp-doc h2 {
+  margin-top: 52px;
+  padding-top: 26px;
+  font-size: 23px;
+  letter-spacing: -0.016em;
+  font-weight: 700;
+}
+
+.vp-doc h3 {
+  margin-top: 34px;
+  font-size: 18.5px;
+  font-weight: 650;
+}
+
+.vp-doc a {
+  font-weight: 500;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* 表格：悬浮高亮 + 首列强调 */
+.vp-doc table {
+  display: block;
+  overflow-x: auto;
+  font-size: 14.5px;
+}
+
+.vp-doc thead th {
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.vp-doc tbody tr {
+  transition: background-color 0.18s var(--ease-out);
+}
+
+.vp-doc tbody tr:hover {
+  background-color: var(--vp-c-brand-soft);
+}
+
+/* 代码块 */
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+}
+
+/* 自定义容器（tip / warning / danger / details）加一点入场味道 */
+.vp-doc .custom-block {
+  border-radius: 10px;
+  transition: border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+}
+
+.vp-doc .custom-block:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+/* ───────────────────────────── 首页 Hero ───────────────────────────── */
+
+.VPHero .name {
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.VPHero .name .clip {
+  background: linear-gradient(100deg, #42b883 6%, #3b82f6 54%, #a855f7 96%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sheen 9s linear infinite;
+}
+
+@keyframes sheen {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.VPHero .text {
+  letter-spacing: -0.018em;
+  font-weight: 700;
+}
+
+.VPHero .tagline {
+  max-width: 620px;
+  line-height: 1.66;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPHero .name .clip {
+    animation: none;
+  }
+}
+
+.VPHero .VPButton {
+  transition: transform 0.26s var(--ease-out), box-shadow 0.26s var(--ease-out),
+    background-color 0.24s var(--ease-out), border-color 0.24s var(--ease-out);
+}
+
+.VPHero .VPButton.brand {
+  border-color: transparent;
+}
+
+.VPHero .VPButton:hover {
+  transform: translateY(-2px);
+}
+
+.VPHero .VPButton.brand:hover {
+  box-shadow: var(--shadow-brand);
+}
+
+.VPHero .VPButton.alt:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  box-shadow: var(--shadow-md);
+}
+
+/* ───────────────────────────── 首页特性卡片 ───────────────────────────── */
+
+.VPFeatures .VPFeature {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out);
+}
+
+.VPFeatures .VPFeature::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--vp-c-brand-1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.VPFeatures .VPFeature:hover {
+  transform: translateY(-5px);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: var(--shadow-lg);
+}
+
+.VPFeatures .VPFeature:hover::before {
+  opacity: 1;
+}
+
+.VPFeatures .VPFeature .icon {
+  transition: transform 0.35s var(--ease-spring);
+}
+
+.VPFeatures .VPFeature:hover .icon {
+  transform: scale(1.12) rotate(-5deg);
+}
+
+.VPFeatures .VPFeature .title {
+  letter-spacing: -0.01em;
+}
+
+/* ───────────────────────────── 滚动进场 ───────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ───────────────────────────── 更新日志组件 ───────────────────────────── */
+
+.rel-date {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.66em;
+  font-weight: 500;
+  color: var(--vp-c-text-3);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.rel-badge {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 999px;
+  background: var(--vp-c-brand-1);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.7;
+  vertical-align: 3px;
+  letter-spacing: 0.02em;
+}
+
+.rel-tag {
+  display: inline-block;
+  min-width: 44px;
+  margin-right: 8px;
+  padding: 1px 7px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.72;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rel-add { background: #3e8e46; }
+.rel-opt { background: #2a6fb0; }
+.rel-fix { background: #be5b0c; }
+.rel-chg { background: #7a4fa3; }
+.rel-sec { background: #b03434; }
+.rel-del { background: #6b7280; }
+
+/* 更新日志条目的悬浮微反馈 */
+.vp-doc li:has(> .rel-tag) {
+  transition: transform 0.2s var(--ease-out);
+}
+
+.vp-doc li:has(> .rel-tag):hover {
+  transform: translateX(2px);
+}
+
+/* 插件速览卡（首页与教程页用） */
+.plugin-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 30px;
+}
+
+.plugin-meta span {
+  padding: 3px 11px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg-soft);
+  font-size: 12.5px;
+  color: var(--vp-c-text-2);
+}
+
+.plugin-meta span.accent {
+  border-color: transparent;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* 插件清单表（首页） */
+.plugin-table {
+  width: 100%;
+  margin: 26px 0;
+  font-size: 14.5px;
+}
+
+/* ───────────────────────────── 搜索框 ───────────────────────────── */
+
+.DocSearch-Button {
+  border-radius: 9px;
+  transition: border-color 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
+}
+
+/* ───────────────────────────── 页脚 ───────────────────────────── */
+
+.VPFooter {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+/* ───────────────────────────── 响应式微调 ───────────────────────────── */
+
+@media (max-width: 959px) {
+  .vp-doc h1 {
+    font-size: 27px;
+  }
+  .vp-doc h2 {
+    font-size: 21px;
+    margin-top: 42px;
+  }
+}
+
+@media (max-width: 639px) {
+  .VPHero .name {
+    font-size: 34px;
+  }
+  .rel-tag {
+    min-width: 38px;
+    font-size: 11px;
+  }
+}

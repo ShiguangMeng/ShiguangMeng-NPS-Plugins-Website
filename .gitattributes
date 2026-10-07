@@ -1,0 +1,15 @@
+# 统一使用 LF：Markdown 与前端工具链在 Linux 构建机（Cloudflare）上更稳
+* text=auto eol=lf
+
+# 二进制资源不做转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# 锁文件与产物不参与 diff 统计
+package-lock.json -diff

@@ -1,0 +1,15 @@
+{
+  "name": "shiguangmeng-nps-plugins-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "拾光梦 · NPS 插件 —— NotchPeninsula 灵动岛插件的配置教程与更新日志",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}
