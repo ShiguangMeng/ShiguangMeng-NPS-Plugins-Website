@@ -1,11 +1,21 @@
 ---
 title: 局域网推送网桥 更新日志
-description: NpsPushBridge 的完整版本更新记录，从 1.0.0 到 1.5.0。
+description: NpsPushBridge 的完整版本更新记录，从 1.0.0 到 1.6.0。
 ---
 
-共 **7 个版本、25 项改动**。当前最新版本 **v1.5.0**（2026-09-27）。
+共 **8 个版本、32 项改动**。当前最新版本 **v1.6.0**（2026-10-09）。
 
-## v1.5.0 <span class="rel-date">2026-09-27</span> <span class="rel-badge">最新</span>
+## v1.6.0 <span class="rel-date">2026-10-09</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-add">新增</span> 配置界面新增「**手机端填**」一行：直接给出拼好的 `http://本机IP:端口/`，右侧一键复制 —— 手机端配置时不用再自己去电脑上查 IP
+- <span class="rel-tag rel-add">新增</span> 这一行**跟着端口实时变化**（还没点保存也变），网卡变化后 1 秒内自动更新；本机地址优先取**正在上网**的那张网卡，虚拟网卡不会顶到第一个
+- <span class="rel-tag rel-chg">调整</span> 「**配置教程**」「**更新日志**」两个按钮改为直接打开**官网**（nps-plugins.yzhdemeng.dpdns.org）：文档统一在官网维护，以后改文档**不再需要更新插件**
+- <span class="rel-tag rel-chg">调整</span> 安装包更小了：更新日志与配置教程不再打包进 dll（少了约 126 KB）—— 它们已完整搬到官网
+- <span class="rel-tag rel-fix">修复</span> 图标映射里去掉了别名 `bili`：宿主要按文件名同名前缀找图（`bili-logo`），而实际文件名是 `bilibili-logo.png`，所以它一直是「看着配了、实际没图标」
+- <span class="rel-tag rel-opt">优化</span> 内置别名一览只列**真正能取到图**的别名（QQ / 哔哩哔哩 / Chrome / Edge / PotPlayer / 系统通知）；靠网络图片的几个应用不再列进一览（映射照常生效，只是它们依赖联网、不该和「零成本的别名」混在一起）
+- <span class="rel-tag rel-opt">优化</span> 适配宿主 2.0.0
+
+## v1.5.0 <span class="rel-date">2026-09-27</span>
 
 - <span class="rel-tag rel-add">新增</span> 安装更简单：配置教程与更新日志已写进 dll，插件目录里只放一个 `NpsPushBridge.dll` 就够，不必再放置附加文件
 - <span class="rel-tag rel-chg">调整</span> 分发方式改为单个 dll 文件（不再提供 zip 安装包）
