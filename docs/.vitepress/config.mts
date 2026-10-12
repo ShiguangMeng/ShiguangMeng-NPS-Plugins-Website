@@ -10,6 +10,7 @@ const PLUGINS = [
   { text: '双因素验证', guide: '/guide/twofactor', log: '/changelog/twofactor' },
   { text: '剪贴板历史', guide: '/guide/clipboard', log: '/changelog/clipboard' },
   { text: '音量控制', guide: '/guide/volume', log: '/changelog/volume' },
+  { text: '媒体增强', guide: '/guide/mediaenhancement', log: '/changelog/mediaenhancement' },
   { text: 'NPS · Minecraft', guide: '/guide/minecraft', log: '/changelog/minecraft' }
 ]
 

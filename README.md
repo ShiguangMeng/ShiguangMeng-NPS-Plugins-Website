@@ -10,10 +10,11 @@
 
 | 插件 | dll | 插件标识 | 当前版本 |
 | --- | --- | --- | --- |
-| 局域网推送网桥 | `NpsPushBridge.dll` | `com.nps.pushbridge` | 1.5.0 |
+| 局域网推送网桥 | `NpsPushBridge.dll` | `com.nps.pushbridge` | 1.6.0 |
 | 双因素验证 | `Nps2FA.dll` | `com.nps.twofactor` | 1.2.0 |
 | 剪贴板历史 | `NpsClipboard.dll` | `com.nps.clipboard` | 1.1.0 |
 | 音量控制 | `NpsVolumeControl.dll` | `com.nps.volumecontrol` | 1.1.1 |
+| 媒体增强 | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.0.0 |
 | NPS · Minecraft | `NpsMinecraft.dll` | `com.nps.dynamicisland` | 1.0.0 |
 
 ## 目录结构
@@ -38,7 +39,7 @@
 └─ .gitignore
 ```
 
-插件 id 取值：`pushbridge` / `twofactor` / `clipboard` / `volume` / `minecraft`。
+插件 id 取值：`pushbridge` / `twofactor` / `clipboard` / `volume` / `mediaenhancement` / `minecraft`。
 
 ## 本地开发
 

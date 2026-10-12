@@ -19,10 +19,11 @@ description: 拾光梦自制的五个 NotchPeninsula 灵动岛插件的全部版
 
 | 插件 | 最新版本 | 版本数 | 最近更新 | 日志 |
 | --- | --- | --- | --- | --- |
-| 局域网推送网桥 | **v1.5.0** | 7 | 2026-09-27 | [查看](/changelog/pushbridge) |
+| 局域网推送网桥 | **v1.6.0** | 8 | 2026-10-09 | [查看](/changelog/pushbridge) |
 | 双因素验证 | **v1.2.0** | 3 | 2026-10-05 | [查看](/changelog/twofactor) |
 | 剪贴板历史 | **v1.1.0** | 2 | 2026-10-07 | [查看](/changelog/clipboard) |
 | 音量控制 | **v1.1.1** | 3 | 2026-10-07 | [查看](/changelog/volume) |
+| 媒体增强 | **v1.0.0** | 1 | 2026-10-12 | [查看](/changelog/mediaenhancement) |
 | NPS · Minecraft | **v1.0.0** | 1 | 2026-10-06 | [查看](/changelog/minecraft) |
 
 ## 改动标签说明

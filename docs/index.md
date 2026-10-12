@@ -4,7 +4,7 @@ layout: home
 hero:
   name: 拾光梦 · NPS 插件
   text: 灵动岛插件 · 配置教程与更新日志
-  tagline: 五个为 NotchPeninsula 制作的插件。每一页都写清它做什么、怎么装、每个选项的含义，以及出问题先查哪一条。
+  tagline: 六个为 NotchPeninsula 制作的插件。每一页都写清它做什么、怎么装、每个选项的含义，以及出问题先查哪一条。
   actions:
     - theme: brand
       text: 快速上手
@@ -26,6 +26,9 @@ features:
   - icon: 🔊
     title: 音量控制
     details: 总音量搬上灵动岛，悬停显示百分比，滚轮直接调节。详情页内置完整音量合成器，可逐应用调音与静音。
+  - icon: 🎵
+    title: 媒体增强
+    details: 自研歌词同步引擎，专治国内播放器拿不到进度、歌词卡第一行。封面 + 逐字歌词 + 频谱上岛，详情页两页可切换。
   - icon: 🎮
     title: NPS · Minecraft
     details: Fabric 模组采集、NPS 插件呈现：挖掘环形进度、方块放置余量、手持物品与耐久实时镜像到桌面。
