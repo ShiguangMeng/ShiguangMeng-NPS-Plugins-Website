@@ -9,7 +9,7 @@ description: 从零开始：安装 NotchPeninsula 宿主、把插件放进 plugi
 
 这些插件全部运行在 **NotchPeninsula（灵动岛）** 之上，宿主是开源项目，插件本身是放在它目录里的 dll。
 
-1. 从 [插件市场](https://nps.georgewu.top/market) 或 [宿主 GitHub 仓库](https://github.com/GEORGEWWWWU/NotchPeninsula) 获取并安装 NotchPeninsula；
+1. 从 [NPS官网](https://nps.georgewu.top) 或 [宿主 GitHub 仓库](https://github.com/GEORGEWWWWU/NotchPeninsula) 获取并安装 NotchPeninsula；
 2. 启动一次，确认屏幕顶部中央出现灵动岛（一条黑色胶囊）；
 3. 记下程序的安装目录 —— 下面要用到它下面的 `plugins` 文件夹。
 
@@ -36,7 +36,7 @@ NotchPeninsula 安装目录\
 
 **单文件布局**（推荐）：把 dll 直接丢进 `plugins\` 根目录即可，一个文件就是一个插件。
 
-**子目录布局**：也可以建一个同名子目录，把 dll 和随包附带的 `plugin.json` 一起放进去。注意目录布局**必须**放在子目录里 —— 不要把 `plugin.json` 和 dll 一起丢在 `plugins\` 根目录下。
+**子目录布局**（可选）：也可以建一个同名子目录，把 dll 和随包附带的 `plugin.json` 一起放进去。注意目录布局**必须**放在子目录里 —— 不要把 `plugin.json` 和 dll 一起丢在 `plugins\` 根目录下。
 
 ::: info 配置教程与更新日志在哪
 大部分插件已经把**配置教程与更新日志写进 dll 内部**了，所以插件目录里只需要一个 dll。
@@ -45,9 +45,9 @@ NotchPeninsula 安装目录\
 
 ## 三、加载与启用
 
-1. 重启 NotchPeninsula，或打开 **设置窗口 → 插件中心**，点一次**重新加载**；
+1. 重启 NotchPeninsula；
 2. 确认插件出现在列表里且已启用（插件中心里能看到名称、版本与作者）；
-3. 打开 **设置 → 显示设置 → 显示内容**，勾选你要上岛的插件。
+3. 打开 **设置 → 显示设置**，勾选你要上岛的插件。
 
 插件加载成功后，灵动岛右侧就会出现它对应的组件。
 
@@ -77,7 +77,7 @@ NotchPeninsula 安装目录\
 | [双因素验证](/guide/twofactor) | `Nps2FA.dll` | `com.nps.twofactor` | 1.2.0 | TOTP 验证码上岛，点一下即复制 |
 | [剪贴板历史](/guide/clipboard) | `NpsClipboard.dll` | `com.nps.clipboard` | 1.1.0 | 复制过的东西随时找回来 |
 | [音量控制](/guide/volume) | `NpsVolumeControl.dll` | `com.nps.volumecontrol` | 1.1.1 | 总音量上岛，滚轮直接调 |
-| [媒体增强](/guide/mediaenhancement) | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.0.0 | 歌词、进度、频谱上岛 |
+| [媒体增强](/guide/mediaenhancement) | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.1.0 | 歌词、进度、频谱上岛 |
 | [NPS · Minecraft](/guide/minecraft) | `NpsMinecraft.dll` | `com.nps.dynamicisland` | 1.0.0 | 把 Minecraft 状态镜像到桌面 |
 
 ## 六、共同的设计约束
@@ -92,8 +92,8 @@ NotchPeninsula 安装目录\
 ## 七、遇到问题怎么办
 
 1. 先看**对应插件的教程页**末尾的「常见问题」小节 —— 绝大多数现象都在那儿有解释；
-2. 再打开**插件中心**看插件日志，或到宿主日志目录 `logs\plugins\<插件标识>\` 翻最近的记录；
-3. 反馈问题时**附上版本号与最近几行日志**，能省掉大半来回。
+2. 反馈问题时**附上版本号与一段bug视频**，能省掉大半来回；
+3. 插件作者为：拾光梦（也就是我）的[反馈链接](https://github.com/ShiguangMeng/ShiguangMeng-NPS-Plugins-Website/issues)（可以在GitHub的issue反馈，也可以进QQ群：1080730621，在群里@我或私信我并反馈内容即可）
 
 ::: tip 找不到想要的插件？
 本站收录的是作者「拾光梦」自制的插件。宿主本身的插件市场里还有其它作者的作品，

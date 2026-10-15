@@ -14,7 +14,7 @@
 | 双因素验证 | `Nps2FA.dll` | `com.nps.twofactor` | 1.2.0 |
 | 剪贴板历史 | `NpsClipboard.dll` | `com.nps.clipboard` | 1.1.0 |
 | 音量控制 | `NpsVolumeControl.dll` | `com.nps.volumecontrol` | 1.1.1 |
-| 媒体增强 | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.0.0 |
+| 媒体增强 | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.1.0 |
 | NPS · Minecraft | `NpsMinecraft.dll` | `com.nps.dynamicisland` | 1.0.0 |
 
 ## 目录结构
