@@ -1,11 +1,18 @@
 ---
 title: 双因素验证 更新日志
-description: Nps2FA 的完整版本更新记录，从 1.0.0 到 1.2.0。
+description: Nps2FA 的完整版本更新记录，从 1.0.0 到 1.3.0。
 ---
 
-共 **3 个版本、14 项改动**。当前最新版本 **v1.2.0**（2026-10-05）。
+共 **4 个版本、18 项改动**。当前最新版本 **v1.3.0**（2026-10-17）。
 
-## v1.2.0 <span class="rel-date">2026-10-05</span> <span class="rel-badge">最新</span>
+## v1.3.0 <span class="rel-date">2026-10-17</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-add">新增</span> **停用与重载时自动关窗**：配置窗口是插件自建的，宿主不知道它的存在 —— 停用或重载插件时它原本会留在屏幕上，现在随插件一同关闭
+- <span class="rel-tag rel-add">新增</span> **卸载时清理临时产物**：清掉 `%TEMP%\Nps2FA` 里的教程副本；禁用、重载、退出宿主都不触发，只在真正卸载时执行一次
+- <span class="rel-tag rel-chg">调整</span> 明确不清理的东西：密钥库、主密钥、导出备份、以及你主动复制到剪贴板的内容 —— 这些是用户资产，卸载后仍在
+- <span class="rel-tag rel-chg">调整</span> 适配宿主 2.0.1 的卸载登记接口；旧宿主上自动降级为「不注册清理」，插件照常加载，不会因为缺这个接口而失败
+
+## v1.2.0 <span class="rel-date">2026-10-05</span>
 
 - <span class="rel-tag rel-add">新增</span> **悬浮才显示验证码**：平时是圆点，鼠标凑近才出现明文，防止旁人一眼看到
 - <span class="rel-tag rel-add">新增</span> **收起态点码即复制**：直接点岛上的验证码数字就复制到剪贴板，不用先展开详情页

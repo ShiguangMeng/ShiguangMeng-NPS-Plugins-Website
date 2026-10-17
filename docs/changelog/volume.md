@@ -1,11 +1,16 @@
 ---
 title: 音量控制 更新日志
-description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.1。
+description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.2。
 ---
 
-共 **3 个版本、14 项改动**。当前最新版本 **v1.1.1**（2026-10-07）。
+共 **4 个版本、16 项改动**。当前最新版本 **v1.1.2**（2026-10-17）。
 
-## v1.1.1 <span class="rel-date">2026-10-07</span> <span class="rel-badge">最新</span>
+## v1.1.2 <span class="rel-date">2026-10-17</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-add">新增</span> **卸载时一定摘掉滚轮钩子**：低层鼠标钩子是本插件占用最重的系统资源，卸载后若留在系统里，鼠标输入会一直先经过它；现在卸载时由宿主再兜一次，钩子与合成器图标缓存的原生位图一并释放
+- <span class="rel-tag rel-chg">调整</span> 适配宿主 2.0.1：卸载登记接口与原有的关闭路径共用同一套收尾逻辑（幂等，可重复调用），旧宿主上退化为只走关闭路径，插件照常加载
+
+## v1.1.1 <span class="rel-date">2026-10-07</span>
 
 - <span class="rel-tag rel-fix">修复</span> **滚轮接管范围收紧**：此前光标落在岛体任意位置都会调音量，导致时钟、媒体等其它组件上的滚动也被吃掉；现改为只在音量组件自己的矩形内接管
 

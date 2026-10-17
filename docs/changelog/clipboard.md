@@ -1,11 +1,18 @@
 ---
 title: 剪贴板历史 更新日志
-description: NpsClipboard 的完整版本更新记录，从 1.0.0 到 1.1.0。
+description: NpsClipboard 的完整版本更新记录，从 1.0.0 到 1.1.1。
 ---
 
-共 **2 个版本、11 项改动**。当前最新版本 **v1.1.0**（2026-10-07）。
+共 **3 个版本、15 项改动**。当前最新版本 **v1.1.1**（2026-10-17）。
 
-## v1.1.0 <span class="rel-date">2026-10-07</span> <span class="rel-badge">最新</span>
+## v1.1.1 <span class="rel-date">2026-10-17</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-fix">修复</span> **独占剪贴板期间只做一件事**：拿到剪贴板后仅把内容拷进内存随即释放，字符串修剪等处理挪到释放之后 —— 长时间占住剪贴板会让整台机器像卡住一样，严重时宿主直接闪退
+- <span class="rel-tag rel-opt">优化</span> **打开失败就放弃**：原来会连试 5 次、每次等 40ms，现在失败即退出本次；下次剪贴板变化照样会通知，不需要在这里排队等
+- <span class="rel-tag rel-opt">优化</span> **收到通知先让 150ms**：那一刻写入方还没关掉剪贴板，立刻去读必然撞车。延迟期间的多次变化合并成一次读取，重复内容由入库去重兜底
+- <span class="rel-tag rel-add">新增</span> **卸载清理设置项**：卸载时删掉本插件写在注册表里的配置，只删值不删键、严格按本插件前缀匹配；禁用与重载不动，重装回来不会带着上次的设置
+
+## v1.1.0 <span class="rel-date">2026-10-07</span>
 
 - <span class="rel-tag rel-add">新增</span> **滚轮翻阅**：详情页直接滚动滚轮翻看历史，`▲` `▼` 按钮与按住拖动滚动全部保留
 - <span class="rel-tag rel-fix">修复</span> **稳定性修复**：重写剪贴板监听生命周期，修复每次复制造成的整机卡顿与宿主闪退

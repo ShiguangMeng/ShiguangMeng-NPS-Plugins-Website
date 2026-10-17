@@ -3,9 +3,14 @@ title: NPS · Minecraft 更新日志
 description: NPS · Minecraft（NpsMinecraft）的版本更新记录。
 ---
 
-共 **1 个版本、10 项改动**。当前最新版本 **v1.0.0**（2026-10-06）。
+共 **2 个版本、12 项改动**。当前最新版本 **v1.0.1**（2026-10-17）。
 
-## v1.0.0 <span class="rel-date">2026-10-06</span> <span class="rel-badge">最新</span>
+## v1.0.1 <span class="rel-date">2026-10-17</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-add">新增</span> **卸载时清掉留在宿主设置里的值**：宿主只提供读写、不提供删除，卸载后这些设置项原本会永久残留、重装回来时带着上次的状态。现在只删本插件前缀的值，不删键（键里还有宿主主题与其他插件的设置）
+- <span class="rel-tag rel-chg">调整</span> 适配宿主 2.0.1 的卸载登记接口，用反射探测：旧宿主上退化为「不注册清理」，插件照常加载 —— 不会因为缺这个接口导致整个插件加载失败
+
+## v1.0.0 <span class="rel-date">2026-10-06</span>
 
 - <span class="rel-tag rel-add">新增</span> 首个版本：Fabric 模组采集、NPS 插件呈现，两端由本地回环 UDP（`127.0.0.1:25585`）单行文本协议驱动
 - <span class="rel-tag rel-add">新增</span> **挖掘进度上岛**：环形进度条套在方块图标外，右侧依次是方块名与百分比
