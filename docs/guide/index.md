@@ -77,7 +77,7 @@ NotchPeninsula 安装目录\
 | [双因素验证](/guide/twofactor) | `Nps2FA.dll` | `com.nps.twofactor` | 1.3.0 | TOTP 验证码上岛，点一下即复制 |
 | [剪贴板历史](/guide/clipboard) | `NpsClipboard.dll` | `com.nps.clipboard` | 1.1.1 | 复制过的东西随时找回来 |
 | [音量控制](/guide/volume) | `NpsVolumeControl.dll` | `com.nps.volumecontrol` | 1.1.2 | 总音量上岛，滚轮直接调 |
-| [媒体增强](/guide/mediaenhancement) | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.1.5 | 歌词、进度、频谱上岛 |
+| [媒体增强](/guide/mediaenhancement) | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.2.0 | 歌词、进度、频谱上岛 |
 | [NPS · Minecraft](/guide/minecraft) | `NpsMinecraft.dll` | `com.nps.dynamicisland` | 1.0.1 | 把 Minecraft 状态镜像到桌面 |
 
 ## 六、共同的设计约束
