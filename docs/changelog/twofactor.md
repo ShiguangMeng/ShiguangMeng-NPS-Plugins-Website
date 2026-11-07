@@ -1,11 +1,16 @@
 ---
 title: 双因素验证 更新日志
-description: Nps2FA 的完整版本更新记录，从 1.0.0 到 1.3.0。
+description: Nps2FA 的完整版本更新记录，从 1.0.0 到 1.3.1。
 ---
 
-共 **4 个版本、18 项改动**。当前最新版本 **v1.3.0**（2026-10-17）。
+共 **5 个版本、20 项改动**。当前最新版本 **v1.3.1**（2026-11-07）。
 
-## v1.3.0 <span class="rel-date">2026-10-17</span> <span class="rel-badge">最新</span>
+## v1.3.1 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-chg">调整</span> **组件迁移到宿主 AutoWidth 协议**：宽度不再由插件上报，改为描述「盾牌图标 + 别名 + 验证码」三段盒子，由宿主实测并统一加两侧留白；绘制同步改用内容区坐标，量画同一份口径。文字块仍用本插件自己量的固定宽度（别名要逐字符回退中文字体，宿主单字体测量与绘制不是同一个数）
+- <span class="rel-tag rel-fix">修复</span> **轮播长别名时的宽度抖动口径**：`Layout` 与 `MeasureWidth` 共用同一套计算并保留 52px 极小值兜底；换条时仍由 `InvalidateWidgetLayout` 触发重测，只是重测入口从 `MeasureWidth` 换成了 `Layout`
+
+## v1.3.0 <span class="rel-date">2026-10-17</span>
 
 - <span class="rel-tag rel-add">新增</span> **停用与重载时自动关窗**：配置窗口是插件自建的，宿主不知道它的存在 —— 停用或重载插件时它原本会留在屏幕上，现在随插件一同关闭
 - <span class="rel-tag rel-add">新增</span> **卸载时清理临时产物**：清掉 `%TEMP%\Nps2FA` 里的教程副本；禁用、重载、退出宿主都不触发，只在真正卸载时执行一次

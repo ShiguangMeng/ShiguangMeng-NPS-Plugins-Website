@@ -1,11 +1,15 @@
 ---
 title: 剪贴板历史 更新日志
-description: NpsClipboard 的完整版本更新记录，从 1.0.0 到 1.1.1。
+description: NpsClipboard 的完整版本更新记录，从 1.0.0 到 1.1.2。
 ---
 
-共 **3 个版本、15 项改动**。当前最新版本 **v1.1.1**（2026-10-17）。
+共 **4 个版本、16 项改动**。当前最新版本 **v1.1.2**（2026-11-07）。
 
-## v1.1.1 <span class="rel-date">2026-10-17</span> <span class="rel-badge">最新</span>
+## v1.1.2 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-chg">调整</span> **组件迁移到宿主 AutoWidth 协议**：内容只有一枚固定 16px 的剪贴板图标，宽度交给宿主（盒子 + 两侧各 1px 留白，合计 18px 不变）；绘制改用内容区坐标，宽度恒定因此保持零重测开销
+
+## v1.1.1 <span class="rel-date">2026-10-17</span>
 
 - <span class="rel-tag rel-fix">修复</span> **独占剪贴板期间只做一件事**：拿到剪贴板后仅把内容拷进内存随即释放，字符串修剪等处理挪到释放之后 —— 长时间占住剪贴板会让整台机器像卡住一样，严重时宿主直接闪退
 - <span class="rel-tag rel-opt">优化</span> **打开失败就放弃**：原来会连试 5 次、每次等 40ms，现在失败即退出本次；下次剪贴板变化照样会通知，不需要在这里排队等

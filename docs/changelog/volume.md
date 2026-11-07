@@ -1,11 +1,16 @@
 ---
 title: 音量控制 更新日志
-description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.2。
+description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.5。
 ---
 
-共 **4 个版本、16 项改动**。当前最新版本 **v1.1.2**（2026-10-17）。
+共 **5 个版本、18 项改动**。当前最新版本 **v1.1.5**（2026-11-07）。
 
-## v1.1.2 <span class="rel-date">2026-10-17</span> <span class="rel-badge">最新</span>
+## v1.1.5 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-chg">调整</span> **组件迁移到宿主 AutoWidth 协议**：平时只有扬声器图标，悬浮时增加间隔与百分比，两套构成都以盒子描述、宽度由宿主实测加留白；绘制改用内容区坐标，与盒子同一份口径
+- <span class="rel-tag rel-opt">优化</span> **悬浮展开 / 收起的宽度切换改由宿主量化**：声明 `WidthVaries`，变宽立即生效、变窄经 600ms 确认 —— 正好吸收「图标与百分比交界处」的来回抖动，不再出现每帧闪宽
+
+## v1.1.2 <span class="rel-date">2026-10-17</span>
 
 - <span class="rel-tag rel-add">新增</span> **卸载时一定摘掉滚轮钩子**：低层鼠标钩子是本插件占用最重的系统资源，卸载后若留在系统里，鼠标输入会一直先经过它；现在卸载时由宿主再兜一次，钩子与合成器图标缓存的原生位图一并释放
 - <span class="rel-tag rel-chg">调整</span> 适配宿主 2.0.1：卸载登记接口与原有的关闭路径共用同一套收尾逻辑（幂等，可重复调用），旧宿主上退化为只走关闭路径，插件照常加载

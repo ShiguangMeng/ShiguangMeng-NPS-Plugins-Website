@@ -3,9 +3,17 @@ title: NPS · Minecraft 更新日志
 description: NPS · Minecraft（NpsMinecraft）的版本更新记录。
 ---
 
-共 **2 个版本、12 项改动**。当前最新版本 **v1.0.1**（2026-10-17）。
+共 **3 个版本、17 项改动**。当前最新版本 **v1.1.0**（2026-11-07）。
 
-## v1.0.1 <span class="rel-date">2026-10-17</span> <span class="rel-badge">最新</span>
+## v1.1.0 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-add">新增</span> **实况窗（岛左侧常驻气泡）**：连接到游戏后在灵动岛左侧常驻一个圆形气泡，外圈进度弧平时显示**手持物品耐久比例**，内圈是当前物品的 16×16 纹理（最近邻放大，保持方块观感）。左右键点气泡展开的就是原来的 Minecraft 详情页
+- <span class="rel-tag rel-add">新增</span> **挖掘进度与破坏反馈**：挖掘时进度弧切换为挖掘进度、状态行显示「挖掘中」；方块被破坏的瞬间满圈亮一下（约 0.8 秒，状态「已破坏」），随后自动回落到耐久
+- <span class="rel-tag rel-add">新增</span> **未连接态**：与游戏断开时气泡保留但进度弧转为不确定态旋转、状态显示「未连接」，重连后自动恢复
+- <span class="rel-tag rel-add">新增</span> **响应宿主插件级开关**：宿主「设置 → 实况窗管理」关掉本插件的实况窗时气泡挂起，主岛组件照常显示；重新打开后继续更新
+- <span class="rel-tag rel-fix">修复</span> **工程引用指向已迁移的宿主目录**：`ProjectReference` 仍指向 `Zhaogmz\NotchPeninsula`，宿主迁到 `Zhaogmz\NPSPlugins\NotchPeninsula` 后无法编译；改为新路径后恢复可编译
+
+## v1.0.1 <span class="rel-date">2026-10-17</span>
 
 - <span class="rel-tag rel-add">新增</span> **卸载时清掉留在宿主设置里的值**：宿主只提供读写、不提供删除，卸载后这些设置项原本会永久残留、重装回来时带着上次的状态。现在只删本插件前缀的值，不删键（键里还有宿主主题与其他插件的设置）
 - <span class="rel-tag rel-chg">调整</span> 适配宿主 2.0.1 的卸载登记接口，用反射探测：旧宿主上退化为「不注册清理」，插件照常加载 —— 不会因为缺这个接口导致整个插件加载失败
