@@ -1,11 +1,15 @@
 ---
 title: 剪贴板历史 更新日志
-description: NpsClipboard 的完整版本更新记录，从 1.0.0 到 1.1.2。
+description: NpsClipboard 的完整版本更新记录，从 1.0.0 到 1.1.3。
 ---
 
-共 **4 个版本、16 项改动**。当前最新版本 **v1.1.2**（2026-11-07）。
+共 **5 个版本、17 项改动**。当前最新版本 **v1.1.3**（2026-11-07）。
 
-## v1.1.2 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+## v1.1.3 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-opt">优化</span> **逐元素取色**：岛上的图标、面板标题与「清空」按钮、以及**每一条记录**的预览与时间，都按自己身后的真实底色挑深字 / 浅字 —— 玻璃材质下上半页压在浅色窗口、下半页压在深色壁纸时，两部分都看得清
+
+## v1.1.2 <span class="rel-date">2026-11-07</span>
 
 - <span class="rel-tag rel-chg">调整</span> **组件迁移到宿主 AutoWidth 协议**：内容只有一枚固定 16px 的剪贴板图标，宽度交给宿主（盒子 + 两侧各 1px 留白，合计 18px 不变）；绘制改用内容区坐标，宽度恒定因此保持零重测开销
 

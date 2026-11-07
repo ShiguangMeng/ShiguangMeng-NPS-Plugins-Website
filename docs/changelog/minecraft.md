@@ -3,9 +3,13 @@ title: NPS · Minecraft 更新日志
 description: NPS · Minecraft（NpsMinecraft）的版本更新记录。
 ---
 
-共 **3 个版本、17 项改动**。当前最新版本 **v1.1.0**（2026-11-07）。
+共 **4 个版本、18 项改动**。当前最新版本 **v1.1.1**（2026-11-07）。
 
-## v1.1.0 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+## v1.1.1 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-opt">优化</span> **文字逐元素取色**：组件里的方块名 / 百分比 / 耐久数值与详情页每一行文字，都改为按**自己身后的真实底色**挑深字或浅字。此前用的是写死的浅色（#F5F5F8 / #C6C8D0），浅色壁纸或白色窗口下几乎看不见
+
+## v1.1.0 <span class="rel-date">2026-11-07</span>
 
 - <span class="rel-tag rel-add">新增</span> **实况窗（岛左侧常驻气泡）**：连接到游戏后在灵动岛左侧常驻一个圆形气泡，外圈进度弧平时显示**手持物品耐久比例**，内圈是当前物品的 16×16 纹理（最近邻放大，保持方块观感）。左右键点气泡展开的就是原来的 Minecraft 详情页
 - <span class="rel-tag rel-add">新增</span> **挖掘进度与破坏反馈**：挖掘时进度弧切换为挖掘进度、状态行显示「挖掘中」；方块被破坏的瞬间满圈亮一下（约 0.8 秒，状态「已破坏」），随后自动回落到耐久

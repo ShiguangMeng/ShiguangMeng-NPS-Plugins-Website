@@ -1,11 +1,16 @@
 ---
 title: 双因素验证 更新日志
-description: Nps2FA 的完整版本更新记录，从 1.0.0 到 1.3.1。
+description: Nps2FA 的完整版本更新记录，从 1.0.0 到 1.3.2。
 ---
 
-共 **5 个版本、20 项改动**。当前最新版本 **v1.3.1**（2026-11-07）。
+共 **6 个版本、22 项改动**。当前最新版本 **v1.3.2**（2026-11-07）。
 
-## v1.3.1 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+## v1.3.2 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-opt">优化</span> **组件逐元素取色**：盾牌图标、别名、验证码各自按身后的底色挑深 / 浅字（此前统一用主题色，玻璃材质下浅色窗口上的白字会糊）；盾牌的绿 / 灰两态在浅底上自动换深一档
+- <span class="rel-tag rel-opt">优化</span> **详情页逐行取色**：标题区与账号列表各自取样，每一行按自己那条的底色决定文字明暗；配置窗口本身是固定深色实底（#202020 + 白字，对比度约 15:1），不参与自适应
+
+## v1.3.1 <span class="rel-date">2026-11-07</span>
 
 - <span class="rel-tag rel-chg">调整</span> **组件迁移到宿主 AutoWidth 协议**：宽度不再由插件上报，改为描述「盾牌图标 + 别名 + 验证码」三段盒子，由宿主实测并统一加两侧留白；绘制同步改用内容区坐标，量画同一份口径。文字块仍用本插件自己量的固定宽度（别名要逐字符回退中文字体，宿主单字体测量与绘制不是同一个数）
 - <span class="rel-tag rel-fix">修复</span> **轮播长别名时的宽度抖动口径**：`Layout` 与 `MeasureWidth` 共用同一套计算并保留 52px 极小值兜底；换条时仍由 `InvalidateWidgetLayout` 触发重测，只是重测入口从 `MeasureWidth` 换成了 `Layout`

@@ -74,11 +74,11 @@ NotchPeninsula 安装目录\
 | 插件 | dll | 标识 | 当前版本 | 一句话 |
 | --- | --- | --- | --- | --- |
 | [局域网推送网桥](/guide/pushbridge) | `NpsPushBridge.dll` | `com.nps.pushbridge` | 1.7.0 | 手机通知推到灵动岛 |
-| [双因素验证](/guide/twofactor) | `Nps2FA.dll` | `com.nps.twofactor` | 1.3.1 | TOTP 验证码上岛，点一下即复制 |
-| [剪贴板历史](/guide/clipboard) | `NpsClipboard.dll` | `com.nps.clipboard` | 1.1.2 | 复制过的东西随时找回来 |
-| [音量控制](/guide/volume) | `NpsVolumeControl.dll` | `com.nps.volumecontrol` | 1.1.5 | 总音量上岛，滚轮直接调 |
-| [媒体增强](/guide/mediaenhancement) | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.5.0 | 歌词、进度、频谱、设置窗口与 MSP 接入 |
-| [NPS · Minecraft](/guide/minecraft) | `NpsMinecraft.dll` | `com.nps.dynamicisland` | 1.1.0 | 把 Minecraft 状态镜像到桌面 |
+| [双因素验证](/guide/twofactor) | `Nps2FA.dll` | `com.nps.twofactor` | 1.3.2 | TOTP 验证码上岛，点一下即复制 |
+| [剪贴板历史](/guide/clipboard) | `NpsClipboard.dll` | `com.nps.clipboard` | 1.1.3 | 复制过的东西随时找回来 |
+| [音量控制](/guide/volume) | `NpsVolumeControl.dll` | `com.nps.volumecontrol` | 1.1.6 | 总音量上岛，滚轮直接调 |
+| [媒体增强](/guide/mediaenhancement) | `NpsMediaEnhancement.dll` | `com.nps.mediaenhancement` | 1.5.1 | 歌词、进度、频谱、设置窗口与 MSP 接入 |
+| [NPS · Minecraft](/guide/minecraft) | `NpsMinecraft.dll` | `com.nps.dynamicisland` | 1.1.1 | 把 Minecraft 状态镜像到桌面 |
 
 ## 六、共同的设计约束
 

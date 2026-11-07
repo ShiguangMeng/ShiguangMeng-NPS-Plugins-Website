@@ -1,11 +1,15 @@
 ---
 title: 音量控制 更新日志
-description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.5。
+description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.6。
 ---
 
-共 **5 个版本、18 项改动**。当前最新版本 **v1.1.5**（2026-11-07）。
+共 **6 个版本、19 项改动**。当前最新版本 **v1.1.6**（2026-11-07）。
 
-## v1.1.5 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+## v1.1.6 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-opt">优化</span> **逐元素取色**：岛上的喇叭图标与百分比分开取样，详情页标题、主音量数值与**每个应用行**的名称各自按身后底色挑深 / 浅字，玻璃与浅色壁纸下不再出现「白字压白底」
+
+## v1.1.5 <span class="rel-date">2026-11-07</span>
 
 - <span class="rel-tag rel-chg">调整</span> **组件迁移到宿主 AutoWidth 协议**：平时只有扬声器图标，悬浮时增加间隔与百分比，两套构成都以盒子描述、宽度由宿主实测加留白；绘制改用内容区坐标，与盒子同一份口径
 - <span class="rel-tag rel-opt">优化</span> **悬浮展开 / 收起的宽度切换改由宿主量化**：声明 `WidthVaries`，变宽立即生效、变窄经 600ms 确认 —— 正好吸收「图标与百分比交界处」的来回抖动，不再出现每帧闪宽
