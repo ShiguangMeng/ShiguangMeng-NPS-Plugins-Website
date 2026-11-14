@@ -23,7 +23,7 @@ description: 拾光梦自制的五个 NotchPeninsula 灵动岛插件的全部版
 | 双因素验证 | **v1.4.1** | 8 | 2026-11-14 | [查看](/changelog/twofactor) |
 | 剪贴板历史 | **v1.1.4** | 6 | 2026-11-14 | [查看](/changelog/clipboard) |
 | 音量控制 | **v1.1.8** | 7 | 2026-11-14 | [查看](/changelog/volume) |
-| 媒体增强 | **v1.8.0** | 12 | 2026-11-14 | [查看](/changelog/mediaenhancement) |
+| 媒体增强 | **v1.8.2** | 12 | 2026-11-14 | [查看](/changelog/mediaenhancement) |
 | NPS · Minecraft | **v1.1.2** | 5 | 2026-11-14 | [查看](/changelog/minecraft) |
 
 ## 改动标签说明
