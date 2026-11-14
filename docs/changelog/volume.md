@@ -1,11 +1,17 @@
 ---
 title: 音量控制 更新日志
-description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.6。
+description: NpsVolumeControl 的完整版本更新记录，从 1.0.0 到 1.1.8。
 ---
 
-共 **6 个版本、19 项改动**。当前最新版本 **v1.1.6**（2026-11-07）。
+共 **7 个版本、22 项改动**。当前最新版本 **v1.1.8**（2026-11-14）。
 
-## v1.1.6 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+## v1.1.8 <span class="rel-date">2026-11-14</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-opt">优化</span> **取色改走宿主公开的逐元素明暗 API**：岛上的喇叭图标与百分比、详情页标题、状态、主音量卡、每一行应用的名称与百分比、静音按钮、滚动条，都按自己脚下那块底色判黑白。判定与平滑交给宿主（24×6 网格，已把玻璃的明度补偿与雾度算进去），实体 / 亚克力 / 液态玻璃同一套口径
+- <span class="rel-tag rel-chg">调整</span> **需要宿主 2.2.3 及以上**（该版本起提供逐元素明暗 API），低于此版本会把本插件判为不兼容而不加载
+- <span class="rel-tag rel-del">移除</span> 插件内的背板采样实现整体删除
+
+## v1.1.6 <span class="rel-date">2026-11-07</span>
 
 - <span class="rel-tag rel-opt">优化</span> **逐元素取色**：岛上的喇叭图标与百分比分开取样，详情页标题、主音量数值与**每个应用行**的名称各自按身后底色挑深 / 浅字，玻璃与浅色壁纸下不再出现「白字压白底」
 

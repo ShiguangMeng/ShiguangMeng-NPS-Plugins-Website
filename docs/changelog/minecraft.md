@@ -3,9 +3,16 @@ title: NPS · Minecraft 更新日志
 description: NPS · Minecraft（NpsMinecraft）的版本更新记录。
 ---
 
-共 **4 个版本、18 项改动**。当前最新版本 **v1.1.1**（2026-11-07）。
+共 **5 个版本、20 项改动**。当前最新版本 **v1.1.2**（2026-11-14）。
 
-## v1.1.1 <span class="rel-date">2026-11-07</span> <span class="rel-badge">最新</span>
+## v1.1.2 <span class="rel-date">2026-11-14</span> <span class="rel-badge">最新</span>
+
+- <span class="rel-tag rel-opt">优化</span> **取色改走宿主公开的逐元素明暗 API**：组件里的方块名 / 百分比 / 耐久数值、详情页每一行文字，以及耐久弧、挖掘弧、耐久条，都按自己脚下那块底色判黑白。判定与平滑交给宿主（24×6 网格，已把玻璃的明度补偿与雾度算进去），实体 / 亚克力 / 液态玻璃同一套口径
+- <span class="rel-tag rel-opt">优化</span> **语义色保留色相**：连接状态点（绿 / 红）与低耐久告警条只在对比度不足时压暗或提亮，不再被洗成纯黑白
+- <span class="rel-tag rel-chg">调整</span> **需要宿主 2.2.3 及以上**（该版本起提供逐元素明暗 API），低于此版本会把本插件判为不兼容而不加载
+- <span class="rel-tag rel-del">移除</span> 插件内的背板采样实现整体删除
+
+## v1.1.1 <span class="rel-date">2026-11-07</span>
 
 - <span class="rel-tag rel-opt">优化</span> **文字逐元素取色**：组件里的方块名 / 百分比 / 耐久数值与详情页每一行文字，都改为按**自己身后的真实底色**挑深字或浅字。此前用的是写死的浅色（#F5F5F8 / #C6C8D0），浅色壁纸或白色窗口下几乎看不见
 

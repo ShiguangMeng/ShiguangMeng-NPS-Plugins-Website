@@ -9,7 +9,7 @@ description: NpsMediaEnhancement 的完整使用说明：内置 PlayerCap、本�
 | --- | --- |
 | 插件标识 | `com.nps.mediaenhancement` |
 | 显示名称 | 媒体增强 |
-| 当前版本 | **1.7.0** |
+| 当前版本 | **1.8.0** |
 | 交付形态 | **单个 dll**（附 `plugin.json`，目录型分发包） |
 | 宿主要求 | NotchPeninsula 现代插件契约（目标框架 `net10.0-windows10.0.19041.0`） |
 
